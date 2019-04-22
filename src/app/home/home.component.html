@@ -1,0 +1,40 @@
+
+
+<div class="py-3 m-auto w-75 text-center">
+  <button *ngFor="let c of countries" class="m-1 btn btn-outline-info" (click)="getCountry(c.code)" >{{c.country}}</button>
+</div>
+
+<div class="pb-3 m-auto w-75 text-center">
+    <button *ngFor="let c of categories" class="m-1 btn btn-outline-danger" (click)="getCategory(c)" >{{c}}</button>
+  </div>
+
+  <div class="w-75 m-auto">
+
+     <form [formGroup]= "form" >
+
+    <!-- <input class="form-control mb-4" formControlName="search"  [(ngModel)]="term" /> -->
+    <input class="form-control mb-4" formControlName="search" />
+
+     </form>
+  
+  </div>
+
+<div class="row">
+
+  <!-- <div class="col-md-4" *ngFor="let n of newsContainer|search:term"> -->
+      <div class="col-md-4" *ngFor="let n of newsContainer">
+
+    <div class="news-item">
+      <a [href]="n.url">
+      <img [src]="n.urlToImage" class="img-fluid"/>
+      <h5>{{n.title}}</h5>
+      <p>{{n.description|seemore}}</p>
+    </a>
+    </div>
+
+  </div>
+
+
+  
+
+</div>

@@ -1,0 +1,27 @@
+<input class="form-control mb-4" [(ngModel)]="term" />
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name:</th>
+
+        <th>Age:</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        
+        <th>DateOfBirth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of hambozo|search:term">
+        <td>{{u.name|gender:u.gender}}</td>
+        <td>{{u.age}}</td>
+        <td>{{u.gender}}</td>
+        <td>{{u.salary|currency:'EUR'}}</td>
+        <td>{{u.dateOfBirth|date:'dd MMM yy'}}</td>
+        
+      </tr>
+    
+    </tbody>
+  </table>
